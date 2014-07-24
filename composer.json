@@ -1,0 +1,21 @@
+{
+    "name": "root/worker",
+    "description": "Generic class to queue and run tasks asynchronously",
+    "autoload": {
+        "psr-0": {"crodas\\": "lib/"}
+    },
+    "require": {
+        "crodas/notoj": "*",
+        "symfony/process": "*",
+        "pda/pheanstalk": "*",
+        "crodas/cli": "*"
+    },
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "César D. Rodas",
+            "email": "crodas@php.net"
+        }
+    ],
+    "minimum-stability": "dev"
+}
