@@ -50,7 +50,7 @@ class Server
         $this->config = $config;
     }
 
-    protected function createWorker($id)
+    protected function createWorker($id, Array $args = [])
     {
         $files = get_included_files();
         array_shift($files);
@@ -65,42 +65,91 @@ class Server
         \$config = crodas\Worker\Config::import(" . $this->config->export() .  ");
 
         \$server = new crodas\Worker\Server(\$config);
-        \$server->worker();
+        \$server->worker(" . var_export($args, true) . ");
         ";
 
         echo "master> Starting process $id\n";
         $process = new PhpProcess($boostrap);
         $process->start();
+        $process->id = $id;
+        $process->time = time();
+        $process->status = empty($args) ? 'idle' : 'busy';
 
         return $process;
+    }
+
+    protected function processReport($process, $stdout)
+    {
+        foreach (explode("\n", $stdout) as $line) {
+            if (empty($line)) continue;
+            if ($line[0] == "\0") {
+                $parts = explode("\0", $line);
+                if ($parts[2] != strlen($parts[3])) {
+                    die("Invalid response");
+                }
+
+                switch ($parts[1]) {
+                case 'start':
+                    $process->status = 'busy';
+                    $process->task   = json_decode($parts[3], true)['args'];
+                    $process->time   = time();
+                    break;
+                case 'end':
+                    $process->status = 'idle';
+                    $process->time   = time();
+                    break;
+                }
+
+            } else {
+                echo "Process::{$process->id}> $line\n";
+            }
+        }
     }
 
     public function serve()
     {
         $processes = array();
         $workers   = 0;
+        $id = 0;
         while (true) {
             foreach ($processes as $i => $process) {
-                $output = $processes[$i]->getOutput();
+                $output = $process->getOutput();
                 if(!empty($output)) {
-                    print $output. "\n";
+                    $this->processReport($process, $output);
+                    $processes[$i]->clearOutput();
                 }
+
                 if (!$process->isRunning()) {
                     unset($processes[$i]);
-                    $workers--;
+                    --$workers;
                     continue;
                 }
+
+                if ($process->status == 'busy' && $process->time+60 < time()) {
+                    echo "master> {$process->id} seems dead, respan\n";
+                    $process->signal(SIGKILL);
+                    $processes[$i] = $this->createWorker(++$id, $process->task);
+                }
+
             }
 
             while ($workers < 8) {
-                $processes[] = $this->createWorker(++$workers);
+                $processes[] = $this->createWorker(++$id);
+                ++$workers;
             }
 
             sleep(1);
         }
     }
 
-    public function worker()
+    protected function report($action, $args)
+    {
+        $data = json_encode($args);
+        echo "\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
+        flush();
+    }
+
+    public function worker(Array $run)
     { 
         $annotations = new Notoj\Annotations;
         foreach ($this->config->getDirectories() as $dir) {
@@ -123,8 +172,16 @@ class Server
 
         $ite = 0;
 
-        while ($task = $engine->listen()) {
+        if (!empty($run)) {
+            echo "Retrying failed task (due timeout)\n";
+        }
+
+        while ($run || $task = $engine->listen()) {
+            if ($run) $task = $run;
+            $this->report('start', ['timeout' => $services[$task[0]]->timeout, 'args' => $task]);
             $services[$task[0]]->execute($task[1]);
+            $this->report('end');
+            $run = null;
             $ite++;
         }
 

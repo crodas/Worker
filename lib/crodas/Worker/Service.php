@@ -44,6 +44,7 @@ class Service
     protected $args;
     protected $is_loaded = false;
     protected $instance  = array();
+    public $timeout = 60;
 
     public function __construct(Annotation $ann, Array $args)
     {

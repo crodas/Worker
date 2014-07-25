@@ -73,7 +73,7 @@ class Beanstalkd
 
     public function listen()
     {
-        $job =$this->conn->reserve();
+        $job = $this->conn->reserve();
         $this->conn->delete($job);
         return $this->deserialize($job->GetData());
     }
