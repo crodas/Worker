@@ -34,7 +34,7 @@ function worker_service(Array $config, $context, $service)
 }
 
 /**
- *  @Service(queued, {
+ *  @Service(worker-server, {
  *  }, { shared: true})
  */
 function worker_daemon(Array $config, $context, $service)
