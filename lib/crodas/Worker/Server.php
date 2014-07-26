@@ -73,9 +73,10 @@ class Server
         echo "master> Starting process $id\n";
         $process = new PhpProcess($boostrap);
         $process->start();
-        $process->id = $id;
-        $process->time = time();
+        $process->id    = $id;
+        $process->time  = time();
         $process->status = empty($args) ? 'idle' : 'busy';
+        $process->tasks  = 0;
 
         return $process;
     }
@@ -90,15 +91,27 @@ class Server
                     die("Invalid response");
                 }
 
+                $args = json_decode($parts[3], true);
+
                 switch ($parts[1]) {
                 case 'start':
                     $process->status = 'busy';
-                    $process->task   = json_decode($parts[3], true)['args'];
+                    $process->task   = $args['args'];
                     $process->time   = time();
+                    $process->timeout = $args['timeout'] || 60;
                     break;
                 case 'end':
                     $process->status = 'idle';
                     $process->time   = time();
+                    $process->tasks++;
+                    if (!empty($process->memory)) {
+                        $process->memory_begin = $args[0];
+                    }
+                    $process->memory_last = $args[1];
+                    echo "Process::{$process->id}> done with success\n";
+                    break;
+                case 'empty':
+                    echo "Process::{$process->id}> no task, respanwing in {$args[0]} seconds\n";
                     break;
                 }
 
@@ -147,10 +160,10 @@ class Server
         }
     }
 
-    protected function report($action, $args)
+    protected function report($action, Array $args = [])
     {
         $data = json_encode($args);
-        echo "\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
+        echo "\n\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
         flush();
     }
 
@@ -162,6 +175,8 @@ class Server
             $dir->getAnnotations($annotations);
         }
 
+        $services = array();
+
         foreach ($annotations->get('Worker', true) as $worker) {
             foreach ($worker->get('Worker') as $args) {
                 $name = current($args['args'] ?: []);
@@ -172,15 +187,24 @@ class Server
             }
         }
 
+        if (empty($services)) {
+            $sleep = rand(5, 20);
+            $this->report('empty', [$sleep]);
+            sleep($sleep);
+            exit;
+        }
+
         $engine = $this->config->getEngine();
         $engine->addServices(array_keys($services));
 
         $ite = 0;
 
         while ($task = $engine->listen()) {
+            $start_memory = memory_get_usage(true);
             $this->report('start', ['timeout' => $services[$task[0]]->timeout, 'args' => $task]);
             $services[$task[0]]->execute($task[1]);
-            $this->report('end');
+            $end_memory = memory_get_usage(true);
+            $this->report('end', [$start_memory, $end_memory]);
             $ite++;
         }
 
