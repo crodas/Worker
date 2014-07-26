@@ -1,5 +1,5 @@
 {
-    "name": "root/worker",
+    "name": "crodas/worker",
     "description": "Generic class to queue and run tasks asynchronously",
     "autoload": {
         "psr-0": {"crodas\\": "lib/"}
