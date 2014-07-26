@@ -27,7 +27,6 @@ function worker_service(Array $config, $context, $service)
     $Config = new Worker\Config;
     $Config->setEngine($config['engine']);
     $Config['host'] = $config['host'];
-    $Config['port'] = $config['port'];
 
     return new Worker\Client($Config);
 }
@@ -47,7 +46,6 @@ function worker_daemon(Array $config, $context, $service)
     }
 
     $Config['host'] = $config['host'];
-    $Config['port'] = $config['port'];
 
     return new Worker\Server($Config);
 }
