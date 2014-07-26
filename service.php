@@ -9,7 +9,6 @@ use crodas\Worker;
  *      engine: { default: 'gearman'},
  *      path: { require: true, type: array_dir},
  *      host:  { default: 'localhost'},
- *      port:  { default: 0}
  *  })
  */
 function worker_config(Array $config)
