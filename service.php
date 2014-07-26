@@ -8,7 +8,7 @@ use crodas\Worker;
  *  @Service(worker-config, {
  *      engine: { default: 'gearman'},
  *      path: { require: true, type: array_dir},
- *      host:  { default: 'localhost'}
+ *      host:  { default: 'localhost'},
  *      port:  { default: 0}
  *  })
  */
