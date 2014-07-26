@@ -43,14 +43,16 @@ use Symfony\Component\Process\PhpProcess;
 class Server
 {
     protected $config;
+    protected $client;
     protected $services = array();
 
     public function __construct(Config $config)
     {
         $this->config = $config;
+        $this->client = new Client($config);
     }
 
-    protected function createWorker($id, Array $args = [])
+    protected function createWorker($id)
     {
         $files = get_included_files();
         array_shift($files);
@@ -65,7 +67,7 @@ class Server
         \$config = crodas\Worker\Config::import(" . $this->config->export() .  ");
 
         \$server = new crodas\Worker\Server(\$config);
-        \$server->worker(" . var_export($args, true) . ");
+        \$server->worker();
         ";
 
         echo "master> Starting process $id\n";
@@ -119,18 +121,21 @@ class Server
                     $processes[$i]->clearOutput();
                 }
 
+                if ($process->status == 'busy' && $process->time+60 < time()) {
+                    // kill it!
+                    $process->stop(1);
+                }
+
                 if (!$process->isRunning()) {
+                    echo "master> {$process->id} seems dead, respawning\n";
+                    if (!empty($process->task)) {
+                        echo "master>\t Rescheduling old task\n";
+                        $this->client->push($process->task[0], $process->task[1]);
+                    }
                     unset($processes[$i]);
                     --$workers;
                     continue;
                 }
-
-                if ($process->status == 'busy' && $process->time+60 < time()) {
-                    echo "master> {$process->id} seems dead, respan\n";
-                    $process->signal(SIGKILL);
-                    $processes[$i] = $this->createWorker(++$id, $process->task);
-                }
-
             }
 
             while ($workers < 8) {
@@ -149,7 +154,7 @@ class Server
         flush();
     }
 
-    public function worker(Array $run)
+    public function worker()
     { 
         $annotations = new Notoj\Annotations;
         foreach ($this->config->getDirectories() as $dir) {
@@ -172,16 +177,10 @@ class Server
 
         $ite = 0;
 
-        if (!empty($run)) {
-            echo "Retrying failed task (due timeout)\n";
-        }
-
-        while ($run || $task = $engine->listen()) {
-            if ($run) $task = $run;
+        while ($task = $engine->listen()) {
             $this->report('start', ['timeout' => $services[$task[0]]->timeout, 'args' => $task]);
             $services[$task[0]]->execute($task[1]);
             $this->report('end');
-            $run = null;
             $ite++;
         }
 
