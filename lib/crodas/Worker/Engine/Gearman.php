@@ -36,35 +36,55 @@
 */
 namespace crodas\Worker\Engine;
 
-use Pheanstalk\Pheanstalk;
 use crodas\Worker\Config;
 
-class Beanstalkd extends Engine
+
+class Gearman extends Engine
 {
-    protected $conn;
+    protected $config;
+    protected $conn = [];
+
+    protected $workload;
+
+    public function get($class)
+    {
+        if (empty($this->conn[$class])) {
+            $this->conn[$class] = new $class;
+            $this->conn[$class]->addServer($this->config['host'] ?: "127.0.0.1");
+        }
+
+        return $this->conn[$class];
+    }
 
     public function setConfig(Config $config)
     {
-        $this->conn = new Pheanstalk($config['host'] ?: "127.0.0.1");
+        $this->config = $config;
     }
 
     public function push($name, $args)
     {
-        $this->conn->useTube(sha1($name))
-            ->put($this->serialize([$name, $args]));
+        $this->get('GearmanClient')
+            ->doBackground($name, $this->serialize([$name, $args]));
+    }
+
+    public function handler($job)
+    {
+        $this->workload = $job->workload();
     }
 
     public function addServices(Array $services)
     {
+        $worker = $this->get('GearmanWorker');
         foreach ($services as $service) { 
-            $this->conn->watch(sha1($service));
+            if (!$worker->addFunction($service, [$this, 'handler'])) {
+                die("failed to register $service\n");
+            }
         }
     }
 
     public function listen()
-    {
-        $job = $this->conn->reserve();
-        $this->conn->delete($job);
-        return $this->deserialize($job->GetData());
+    { 
+        $this->get('GearmanWorker')->work();
+        return $this->deserialize($this->workload);
     }
 }
