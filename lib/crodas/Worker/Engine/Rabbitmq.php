@@ -34,53 +34,65 @@
   | Authors: César Rodas <crodas@php.net>                                           |
   +---------------------------------------------------------------------------------+
 */
-namespace crodas\Worker;
+namespace crodas\Worker\Engine;
 
-use Notoj\Annotation;
+use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Message\AMQPMessage;
+use crodas\Worker\Config;
 
-class Service
+class RabbitMQ extends Engine
 {
-    protected $ann;
-    protected $args;
-    protected $is_loaded = false;
-    protected $instance  = array();
-    public $timeout = 60;
+    protected $conn;
+    protected $channel;
+    protected $msg;
 
-    public function __construct(Annotation $ann, Array $args)
+    public function setConfig(Config $config)
     {
-        $this->ann  = $ann;
-        $this->args = $args; 
-        if ($ann->isMethod() || $ann->isClass()) {
-            $this->is_loADED = class_exists($ann['class'], false);
-        } else {
-            $this->is_loaded = is_callable($ann['function']);
+        $this->conn = new AMQPConnection(
+            $config['host'] ?: "localhost",
+            $config['port'] ?: 5672,
+            $config['user'] ?: "guest",
+            $config['password'] ?: "guest"
+        );
+
+        $this->channel = $this->conn->channel();
+    }
+
+    public function __destruct()
+    {
+        $this->channel->close();
+        $this->conn->close();
+    }
+
+    public function push($name, $args)
+    {
+        $msg = new AMQPMessage(
+            $this->serialize([$name, $args]),
+            array('delivery_mode' => 2) # make message persistent
+        );
+
+        $this->channel->basic_publish($msg, '', $name);
+    }
+
+    public function callback($msg)
+    {
+        $this->msg = $msg;
+        $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
+    }
+
+    public function addServices(Array $services)
+    {
+        foreach ($services as $service) {
+            $this->channel->queue_declare($service, false, true, false, false);
+            $this->channel->basic_consume($service, '', false, false, false, false, [$this, 'callback']);
         }
     }
 
-    public function getName()
+    public function listen()
     {
-        return current($this->args);
-    }
+        $this->channel->basic_qos(null, 1, null);
+        $this->channel->wait();
 
-    public function execute(Array $args)
-    {
-        if (!$this->is_loaded) {
-            require_once $this->ann['file'];
-            $this->is_loaded = true;
-            if ($this->ann->isMethod()) {
-                $class = $this->ann['class'];
-                $this->instance = [new $class, $this->ann['method']];
-            } else {
-                $this->instance = $this->ann['function'] ?: $this->ann['class'];
-            }
-        }
-
-        $worker = $this->instance;
-
-        if (is_array($worker)) {
-            return $worker[0]->{ $worker[1] }{$ann['method']}( $args );
-        }
-
-        return $worker( $args );
+        return $this->deserialize($this->msg->body);
     }
 }
