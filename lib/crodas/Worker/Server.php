@@ -62,7 +62,7 @@ class Server
             require_once \$file;
         }
 
-        define('__WORKER__', $id);
+        define('__WORKER__', " . var_export($id, true). ");
 
         \$config = crodas\Worker\Config::import(" . $this->config->export() .  ");
 
@@ -70,14 +70,50 @@ class Server
         \$server->worker();
         ";
 
-        echo "master> Starting process $id\n";
+        $this->log(null, "Starting process $id");
         $process = new PhpProcess($boostrap);
         $process->start();
-        $process->id = $id;
-        $process->time = time();
-        $process->status = empty($args) ? 'idle' : 'busy';
+        $process->id        = $id;
+        $process->time      = time();
+        $process->status    = empty($args) ? 'idle' : 'busy';
+        $process->tasks     = 0;
+        $process->failed    = 0;
 
         return $process;
+    }
+
+    protected function formatBytes($bytes, $precision = 2)
+    { 
+        $units = array('B', 'KB', 'MB', 'GB', 'TB'); 
+
+        $bytes = max($bytes, 0); 
+        $pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
+        $pow = min($pow, count($units) - 1); 
+
+        // Uncomment one of the following alternatives
+        $bytes /= pow(1024, $pow);
+        // $bytes /= (1 << (10 * $pow)); 
+
+        return round($bytes, $precision) . ' ' . $units[$pow]; 
+    }
+
+    protected function log($process, $text)
+    {
+        $date = date("r");
+        if ($process) {
+            echo "[$date] [{$process->id}] $text\n";
+        } else {
+            echo "[$date] [master] $text\n";
+        }
+    }
+
+    protected function checkprocessHealth($process)
+    {
+        $memleak = $process->memory_last > $process->memory_begin*$this->config['memory_threshold'];
+        if ($memleak && $process->tasks > $this->config['minimum_tasks']) {
+            $process->stop(1);
+            $this->log($process, "kill due memory growth over time");
+        }
     }
 
     protected function processReport($process, $stdout)
@@ -90,20 +126,47 @@ class Server
                     die("Invalid response");
                 }
 
+                $args = json_decode($parts[3], true);
+
                 switch ($parts[1]) {
                 case 'start':
                     $process->status = 'busy';
-                    $process->task   = json_decode($parts[3], true)['args'];
+                    $process->task   = $args['args'];
                     $process->time   = time();
+                    $process->timeout = max($args['timeout'], 60);
+                    $this->log($process, "beging task '{$args['args'][0]}'");
                     break;
-                case 'end':
+                case 'failed':
+                    $process->task   = null;
                     $process->status = 'idle';
                     $process->time   = time();
+                    $process->failed++;
+                    if (empty($process->memory_begin)) {
+                        $process->memory_begin = $args[0];
+                    }
+                    $process->memory_last = $args[1];
+                    $this->log($process, "done with error ({$args[2]}: {$args[3]})");
+                    $this->checkprocessHealth($process);
+                    break;
+                case 'end':
+                    $process->task   = null;
+                    $process->status = 'idle';
+                    $process->time   = time();
+                    $process->tasks++;
+                    if (empty($process->memory_begin)) {
+                        $process->memory_begin = $args[0];
+                    }
+                    $process->memory_last = $args[1];
+                    $this->log($process, "done with success");
+                    $this->checkprocessHealth($process);
+                    break;
+                case 'empty':
+                    $this->log($process, "no task, respawning in {$args[0]} seconds");
                     break;
                 }
 
             } else {
-                echo "Process::{$process->id}> $line\n";
+                $this->log($process, $line);
             }
         }
     }
@@ -121,15 +184,17 @@ class Server
                     $processes[$i]->clearOutput();
                 }
 
-                if ($process->status == 'busy' && $process->time+60 < time()) {
+                $timeout = false;
+                if ($process->status == 'busy' && $process->time+$process->timeout < time()) {
                     // kill it!
+                    $timeout = true;
                     $process->stop(1);
                 }
 
                 if (!$process->isRunning()) {
-                    echo "master> {$process->id} seems dead, respawning\n";
+                    $this->log(null, "seems dead, respawning"); 
                     if (!empty($process->task)) {
-                        echo "master>\t Rescheduling old task\n";
+                        $this->log(null, "Rescheduling old failed task");
                         $this->client->push($process->task[0], $process->task[1]);
                     }
                     unset($processes[$i]);
@@ -139,7 +204,7 @@ class Server
             }
 
             while ($workers < 8) {
-                $processes[] = $this->createWorker(++$id);
+                $processes[] = $this->createWorker(gethostname() . ':' . (++$id));
                 ++$workers;
             }
 
@@ -147,10 +212,10 @@ class Server
         }
     }
 
-    protected function report($action, $args)
+    protected function report($action, Array $args = [])
     {
         $data = json_encode($args);
-        echo "\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
+        echo "\n\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
         flush();
     }
 
@@ -162,6 +227,8 @@ class Server
             $dir->getAnnotations($annotations);
         }
 
+        $services = array();
+
         foreach ($annotations->get('Worker', true) as $worker) {
             foreach ($worker->get('Worker') as $args) {
                 $name = current($args['args'] ?: []);
@@ -172,16 +239,29 @@ class Server
             }
         }
 
+        if (empty($services)) {
+            $sleep = rand(5, 20);
+            $this->report('empty', [$sleep]);
+            sleep($sleep);
+            exit;
+        }
+
         $engine = $this->config->getEngine();
         $engine->addServices(array_keys($services));
 
-        $ite = 0;
 
         while ($task = $engine->listen()) {
+            $start_memory = memory_get_usage(true);
             $this->report('start', ['timeout' => $services[$task[0]]->timeout, 'args' => $task]);
-            $services[$task[0]]->execute($task[1]);
-            $this->report('end');
-            $ite++;
+            try {
+                $services[$task[0]]->execute($task[1]);
+            } catch (\Exception $e) {
+                $end_memory = memory_get_usage(true);
+                $this->report('failed', [$start_memory, $end_memory, get_class($e), $e->getMessage()]);
+                continue;
+            }
+            $end_memory = memory_get_usage(true);
+            $this->report('end', [$start_memory, $end_memory]);
         }
 
     }

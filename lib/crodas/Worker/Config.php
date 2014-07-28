@@ -44,6 +44,12 @@ class Config extends ArrayObject
     protected $engine_name;
     protected $dirs = [];
 
+    protected $default = [
+        'host' => 'localhost',
+        'memory_threshold'  => 3, // allow 3x memory growth before killing it
+        'minimum_tasks'     => 3, // to qualify for memory issue it should have at least 3 tasks
+    ];
+
     public static function import(Array $definition)
     {
         $object = new self;
@@ -73,6 +79,9 @@ class Config extends ArrayObject
     public function offsetGet($index)
     {
         if (!parent::offsetExists($index)) {
+            if (!empty($this->default[$index])) {
+                return $this->default[$index];
+            }
             return false;
         }
 
