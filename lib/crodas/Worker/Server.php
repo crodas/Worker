@@ -65,6 +65,7 @@ class Server
         define('__WORKER__', " . var_export($id, true). ");
 
         \$config = crodas\Worker\Config::import(" . $this->config->export() .  ");
+        \$config['worker_id'] = __WORKER__;
 
         \$server = new crodas\Worker\Server(\$config);
         \$server->worker();
@@ -131,10 +132,10 @@ class Server
                 switch ($parts[1]) {
                 case 'start':
                     $process->status = 'busy';
-                    $process->task   = $args['args'];
+                    $process->task   = Task::restore($this->config, $args['args']);
                     $process->time   = time();
                     $process->timeout = max($args['timeout'], 60);
-                    $this->log($process, "beging task '{$args['args'][0]}'");
+                    $this->log($process, "beging task '{$process->task->function}'");
                     break;
                 case 'failed':
                     $process->task   = null;
@@ -195,7 +196,7 @@ class Server
                     $this->log(null, "seems dead, respawning"); 
                     if (!empty($process->task)) {
                         $this->log(null, "Rescheduling old failed task");
-                        $this->client->push($process->task[0], $process->task[1]);
+                        $this->client->push($process->task);
                     }
                     unset($processes[$i]);
                     --$workers;
@@ -252,9 +253,9 @@ class Server
 
         while ($task = $engine->listen()) {
             $start_memory = memory_get_usage(true);
-            $this->report('start', ['timeout' => $services[$task[0]]->timeout, 'args' => $task]);
+            $this->report('start', ['timeout' => $services[$task->function]->timeout, 'args' => $task->serialize()]);
             try {
-                $services[$task[0]]->execute($task[1]);
+                $services[$task->function]->execute($task);
             } catch (\Exception $e) {
                 $end_memory = memory_get_usage(true);
                 $this->report('failed', [$start_memory, $end_memory, get_class($e), $e->getMessage()]);

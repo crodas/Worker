@@ -36,6 +36,7 @@
 */
 namespace crodas\Worker;
 
+
 class Client
 {
     protected $config;
@@ -49,7 +50,11 @@ class Client
 
     public function push($name, Array $args = array())
     {
-        $this->engine->push($name, $args);
+        $task = new Task($this->config, $name, $args);
+
+        $this->engine->push($task);
+
+        return $task;
     }
 
 }

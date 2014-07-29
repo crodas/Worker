@@ -37,22 +37,13 @@
 namespace crodas\Worker\Engine;
 
 use crodas\Worker\Config;
+use crodas\Worker\Task;
 
 abstract class Engine
 {
-    public function deserialize($string)
-    {
-        return unserialize($string);
-    }
-
-    public function serialize(Array $data)
-    {
-        return serialize($data);
-    }
-
     abstract public function setConfig(Config $config);
 
-    abstract public function push($name, $args);
+    abstract public function push(Task $task);
 
     abstract public function listen();
 

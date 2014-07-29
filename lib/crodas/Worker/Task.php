@@ -36,52 +36,87 @@
 */
 namespace crodas\Worker;
 
-use Notoj\Annotation;
-
-class Service
+class Task 
 {
-    protected $ann;
-    protected $args;
-    protected $is_loaded = false;
-    protected $instance  = array();
-    public $timeout = 60;
+    protected $id;
 
-    public function __construct(Annotation $ann, Array $args)
+    protected $function;
+
+    protected $args = [];
+
+    protected $status;
+
+    protected $created;
+
+    protected $started;
+
+    protected $finished;
+
+    protected $worker;
+    
+    protected $retries =  0;
+
+    protected $config;
+
+    public function __get($name)
     {
-        $this->ann  = $ann;
-        $this->args = $args; 
-        if ($ann->isMethod() || $ann->isClass()) {
-            $this->is_loaded = class_exists($ann['class'], false);
-        } else {
-            $this->is_loaded = is_callable($ann['function']);
-        }
+        return $this->$name;
     }
 
-    public function getName()
+    public function begin()
     {
-        return current($this->args);
+        $this->retries++;
+        $this->started = time();
+        $this->status  = 'working';
+        $this->worker  = __WORKER__;
+        var_dump($this);
+        return $this;
     }
 
-    public function execute(Task $job)
+    public static function restore($config, $string)
     {
-        if (!$this->is_loaded) {
-            require_once $this->ann['file'];
-            $this->is_loaded = true;
-            if ($this->ann->isMethod()) {
-                $class = $this->ann['class'];
-                $this->instance = [new $class, $this->ann['method']];
-            } else {
-                $this->instance = $this->ann['function'] ?: $this->ann['class'];
-            }
-        }
+        $arr = unserialize($string);
+        $task = new self($config, $arr[1], $arr[2]);
+        $task->id = $arr[0];
 
-        $worker = $this->instance;
-        $job->begin();
-
-        if (is_array($worker)) {
-            return $worker[0]->{ $worker[1] }{$ann['method']}( $job->args, $job);
-        }
-
-        return $worker( $job->args, $job );
+        return $task;
     }
+    
+    protected function uuid() {
+        return sprintf(
+            '%08x-%04x-%04x-%04x-%04x%04x%04x',
+
+            time(), // 32 bits, time. So our data is semi sorted
+
+            // 16 bits for "time_mid"
+            mt_rand( 0, 0xffff ),
+
+            // 16 bits for "time_hi_and_version",
+            // four most significant bits holds version number 4
+            mt_rand( 0, 0x0fff ) | 0x4000,
+
+            // 16 bits, 8 bits for "clk_seq_hi_res",
+            // 8 bits for "clk_seq_low",
+            // two most significant bits holds zero and one for variant DCE1.1
+            mt_rand( 0, 0x3fff ) | 0x8000,
+
+            // 48 bits for "node"
+            mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
+        );
+    }
+
+    public function serialize()
+    {
+        return serialize([$this->id, $this->function, $this->args]);
+    }
+
+    public function __construct($config, $name, Array $args = [])
+    {
+        $this->config   = $config;
+        $this->id       = $this->uuid();
+        $this->function = $name;
+        $this->args     = $args;
+        $this->created  = time();
+    }
+
 }

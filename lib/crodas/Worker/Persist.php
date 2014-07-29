@@ -36,52 +36,13 @@
 */
 namespace crodas\Worker;
 
-use Notoj\Annotation;
-
-class Service
+class Persist
 {
-    protected $ann;
-    protected $args;
-    protected $is_loaded = false;
-    protected $instance  = array();
-    public $timeout = 60;
+    protected $config;
 
-    public function __construct(Annotation $ann, Array $args)
+    public function __construct(Config $config)
     {
-        $this->ann  = $ann;
-        $this->args = $args; 
-        if ($ann->isMethod() || $ann->isClass()) {
-            $this->is_loaded = class_exists($ann['class'], false);
-        } else {
-            $this->is_loaded = is_callable($ann['function']);
-        }
+        $this->config = $config;
     }
 
-    public function getName()
-    {
-        return current($this->args);
-    }
-
-    public function execute(Task $job)
-    {
-        if (!$this->is_loaded) {
-            require_once $this->ann['file'];
-            $this->is_loaded = true;
-            if ($this->ann->isMethod()) {
-                $class = $this->ann['class'];
-                $this->instance = [new $class, $this->ann['method']];
-            } else {
-                $this->instance = $this->ann['function'] ?: $this->ann['class'];
-            }
-        }
-
-        $worker = $this->instance;
-        $job->begin();
-
-        if (is_array($worker)) {
-            return $worker[0]->{ $worker[1] }{$ann['method']}( $job->args, $job);
-        }
-
-        return $worker( $job->args, $job );
-    }
 }

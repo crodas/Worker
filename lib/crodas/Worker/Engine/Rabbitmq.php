@@ -39,12 +39,14 @@ namespace crodas\Worker\Engine;
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 use crodas\Worker\Config;
+use crodas\Worker\Task;
 
 class RabbitMQ extends Engine
 {
     protected $conn;
     protected $channel;
     protected $msg;
+    protected $config;
 
     public function setConfig(Config $config)
     {
@@ -56,6 +58,7 @@ class RabbitMQ extends Engine
         );
 
         $this->channel = $this->conn->channel();
+        $this->config  = $config;
     }
 
     public function __destruct()
@@ -64,14 +67,14 @@ class RabbitMQ extends Engine
         $this->conn->close();
     }
 
-    public function push($name, $args)
+    public function push(Task $task)
     {
         $msg = new AMQPMessage(
-            $this->serialize([$name, $args]),
+            $task->serialize(),
             array('delivery_mode' => 2) # make message persistent
         );
 
-        $this->channel->basic_publish($msg, '', $name);
+        $this->channel->basic_publish($msg, '', $task->function);
     }
 
     public function callback($msg)
@@ -93,6 +96,6 @@ class RabbitMQ extends Engine
         $this->channel->basic_qos(null, 1, null);
         $this->channel->wait();
 
-        return $this->deserialize($this->msg->body);
+        return Task::restore($this->config, $this->msg->body);
     }
 }
