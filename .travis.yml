@@ -6,10 +6,7 @@ php:
     - 5.4
 
 before_script:
-    - sudo apt-get install python-software-properties
-    - sudo add-apt-repository ppa:gearman-developers/ppa
-    - sudo apt-get update
     - sudo apt-get install libgearman-dev gearman
-    - yes | pecl install gearman
+    - yes | pecl install gearman-1.0.3
     - wget http://getcomposer.org/composer.phar
     - php composer.phar install
