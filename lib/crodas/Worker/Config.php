@@ -45,7 +45,7 @@ class Config extends ArrayObject
     protected $dirs = [];
 
     protected $default = [
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'memory_threshold'  => 3, // allow 3x memory growth before killing it
         'minimum_jobs'     => 3, // to qualify for memory issue it should have at least 3 jobs
     ];
