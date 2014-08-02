@@ -1,5 +1,7 @@
 language: php
-script: phpunit
+script: 
+    - gearmand -d
+    - phpunit
 
 php:
     - 5.5
