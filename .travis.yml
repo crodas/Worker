@@ -1,6 +1,6 @@
 language: php
 script: 
-    - sudo /etc/init.d/gearman-job-server start
+    - sudo netstat -nlpt
     - phpunit
 
 php:
