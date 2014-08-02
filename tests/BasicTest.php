@@ -11,7 +11,7 @@ class BasicTest extends \phpunit_framework_testcase
     {
         $config = new Config;
         $config['foo'] = 'bar';
-        $this->assertEquals($config['host'], 'localhost');
+        $this->assertEquals($config['host'], '127.0.0.1');
         $this->assertEquals($config['non_defined'], false);
         $this->assertEquals($config['foo'], 'bar');
     }
