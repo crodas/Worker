@@ -1,6 +1,6 @@
 language: php
 script: 
-    - /usr/sbin/gearmand -d
+    - /etc/init.d/gearman-job-server start
     - phpunit
 
 php:
