@@ -1,6 +1,6 @@
 language: php
 script: 
-    - gearmand -d
+    - /usr/sbin/gearmand -d
     - phpunit
 
 php:
