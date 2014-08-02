@@ -38,7 +38,7 @@ namespace crodas\Worker\Engine;
 
 use Pheanstalk\Pheanstalk;
 use crodas\Worker\Config;
-use crodas\Worker\Task;
+use crodas\Worker\Job;
 
 class Beanstalkd extends Engine
 {
@@ -51,10 +51,10 @@ class Beanstalkd extends Engine
         $this->config = $config;
     }
 
-    public function push(Task $task)
+    public function push(Job $job)
     {
-        $this->conn->useTube(sha1($task->function))
-            ->put($task->serialize());
+        $this->conn->useTube(sha1($job->function))
+            ->put($job->serialize());
     }
 
     public function addServices(Array $services)
@@ -68,6 +68,6 @@ class Beanstalkd extends Engine
     {
         $job = $this->conn->reserve();
         $this->conn->delete($job);
-        return Task::restore($this->config, $job->getData());
+        return Job::restore($this->config, $job->getData());
     }
 }

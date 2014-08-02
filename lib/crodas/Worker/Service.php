@@ -44,12 +44,14 @@ class Service
     protected $args;
     protected $is_loaded = false;
     protected $instance  = array();
+    protected $server;
     public $timeout = 60;
 
-    public function __construct(Annotation $ann, Array $args)
+    public function __construct(Annotation $ann, Array $args, $server)
     {
-        $this->ann  = $ann;
-        $this->args = $args; 
+        $this->server   = $server;
+        $this->ann      = $ann;
+        $this->args     = $args; 
         if ($ann->isMethod() || $ann->isClass()) {
             $this->is_loaded = class_exists($ann['class'], false);
         } else {
@@ -62,7 +64,7 @@ class Service
         return current($this->args);
     }
 
-    public function execute(Task $job)
+    public function execute(Job $job)
     {
         if (!$this->is_loaded) {
             require_once $this->ann['file'];
@@ -79,9 +81,9 @@ class Service
         $job->begin();
 
         if (is_array($worker)) {
-            return $worker[0]->{ $worker[1] }{$ann['method']}( $job->args, $job);
+            return $worker[0]->{ $worker[1] }{$ann['method']}( $job->args, $job, $this->server);
         }
 
-        return $worker( $job->args, $job );
+        return $worker( $job->args, $job, $this->server );
     }
 }

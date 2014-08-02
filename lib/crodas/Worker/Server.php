@@ -55,7 +55,9 @@ class Server
     protected function createWorker($id)
     {
         $files = get_included_files();
-        array_shift($files);
+        if ($_SERVER['PHP_SELF'] != '-') {
+            array_shift($files);
+        }
 
         $boostrap = "<?php 
         foreach (" . var_export($files, true) . " as \$file) {
@@ -71,13 +73,14 @@ class Server
         \$server->worker();
         ";
 
+
         $this->log(null, "Starting process $id");
         $process = new PhpProcess($boostrap);
         $process->start();
         $process->id        = $id;
         $process->time      = time();
         $process->status    = empty($args) ? 'idle' : 'busy';
-        $process->tasks     = 0;
+        $process->jobs     = 0;
         $process->failed    = 0;
 
         return $process;
@@ -111,7 +114,7 @@ class Server
     protected function checkprocessHealth($process)
     {
         $memleak = $process->memory_last > $process->memory_begin*$this->config['memory_threshold'];
-        if ($memleak && $process->tasks > $this->config['minimum_tasks']) {
+        if ($memleak && $process->jobs > $this->config['minimum_jobs']) {
             $process->stop(1);
             $this->log($process, "kill due memory growth over time");
         }
@@ -131,16 +134,16 @@ class Server
 
                 switch ($parts[1]) {
                 case 'start':
-                    $process->status = 'busy';
-                    $process->task   = Task::restore($this->config, $args['args']);
-                    $process->time   = time();
-                    $process->timeout = max($args['timeout'], 60);
-                    $this->log($process, "beging task '{$process->task->function}'");
+                    $process->status    = 'busy';
+                    $process->job       = Job::restore($this->config, $args['args']);
+                    $process->time      = time();
+                    $process->timeout   = max($args['timeout'], 60);
+                    $this->log($process, "beging job '{$process->job->function}'");
                     break;
                 case 'failed':
-                    $process->task   = null;
-                    $process->status = 'idle';
-                    $process->time   = time();
+                    $process->job       = null;
+                    $process->status    = 'idle';
+                    $process->time      = time();
                     $process->failed++;
                     if (empty($process->memory_begin)) {
                         $process->memory_begin = $args[0];
@@ -150,19 +153,20 @@ class Server
                     $this->checkprocessHealth($process);
                     break;
                 case 'end':
-                    $process->task   = null;
+                    $process->job->setResult($args[0]);
+                    $process->job   = null;
                     $process->status = 'idle';
                     $process->time   = time();
-                    $process->tasks++;
+                    $process->jobs++;
                     if (empty($process->memory_begin)) {
-                        $process->memory_begin = $args[0];
+                        $process->memory_begin = $args[1];
                     }
-                    $process->memory_last = $args[1];
+                    $process->memory_last = $args[2];
                     $this->log($process, "done with success");
                     $this->checkprocessHealth($process);
                     break;
                 case 'empty':
-                    $this->log($process, "no task, respawning in {$args[0]} seconds");
+                    $this->log($process, "no job, respawning in {$args[0]} seconds");
                     break;
                 }
 
@@ -194,9 +198,10 @@ class Server
 
                 if (!$process->isRunning()) {
                     $this->log(null, "seems dead, respawning"); 
-                    if (!empty($process->task)) {
-                        $this->log(null, "Rescheduling old failed task");
-                        $this->client->push($process->task);
+                    if (!empty($process->job)) {
+                        $this->log(null, "Rescheduling old failed job");
+                        $this->config->getEngine()->push($process->job);
+                        $process->job = null;
                     }
                     unset($processes[$i]);
                     --$workers;
@@ -213,16 +218,10 @@ class Server
         }
     }
 
-    protected function report($action, Array $args = [])
+    public function getServices()
     {
-        $data = json_encode($args);
-        echo "\n\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
-        flush();
-    }
-
-    public function worker()
-    { 
         $annotations = new Notoj\Annotations;
+
         foreach ($this->config->getDirectories() as $dir) {
             $dir = new Notoj\Dir($dir);
             $dir->getAnnotations($annotations);
@@ -236,9 +235,23 @@ class Server
                 if (empty($name)) {
                     continue;
                 }
-                $services[$name] = new Service($worker, $args['args']);
+                $services[$name] = new Service($worker, $args['args'], $this);
             }
         }
+
+        return $services;
+    }
+
+    protected function report($action, Array $args = [])
+    {
+        $data = json_encode($args);
+        echo "\n\0{$action}\0" . strlen($data) . "\0" . $data . "\n";
+        flush();
+    }
+
+    public function worker()
+    { 
+        $services = $this->getServices();
 
         if (empty($services)) {
             $sleep = rand(5, 20);
@@ -251,18 +264,21 @@ class Server
         $engine->addServices(array_keys($services));
 
 
-        while ($task = $engine->listen()) {
+        while ($job = $engine->listen()) {
             $start_memory = memory_get_usage(true);
-            $this->report('start', ['timeout' => $services[$task->function]->timeout, 'args' => $task->serialize()]);
+            $this->report('start', ['timeout' => $services[$job->function]->timeout, 'args' => $job->serialize()]);
             try {
-                $services[$task->function]->execute($task);
+                $result = $services[$job->function]->execute($job);
+                if ($job->synchronous) {
+                    $this->client->push($job->id, [$result]);
+                }
             } catch (\Exception $e) {
                 $end_memory = memory_get_usage(true);
                 $this->report('failed', [$start_memory, $end_memory, get_class($e), $e->getMessage()]);
                 continue;
             }
             $end_memory = memory_get_usage(true);
-            $this->report('end', [$start_memory, $end_memory]);
+            $this->report('end', [$result, $start_memory, $end_memory]);
         }
 
     }

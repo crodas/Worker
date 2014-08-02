@@ -37,13 +37,13 @@
 namespace crodas\Worker\Engine;
 
 use crodas\Worker\Config;
-use crodas\Worker\Task;
+use crodas\Worker\Job;
 
 abstract class Engine
 {
     abstract public function setConfig(Config $config);
 
-    abstract public function push(Task $task);
+    abstract public function push(Job $job);
 
     abstract public function listen();
 

@@ -1,0 +1,948 @@
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:1
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:2
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:3
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:4
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:5
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:6
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:7
+[Tue, 29 Jul 2014 01:29:01 -0400] [master] Starting process crodas:8
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1] beging task 'send:email'
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1] class crodas\Worker\Task#47 (10) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $id =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   string(36) "53d7311e-6f4f-4a5d-87eb-2351184d9eed"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $function =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   string(10) "send:email"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $args =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     'to' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     string(22) "0_1406611742@gmail.com"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     'sleep' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     int(90)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $status =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   string(7) "working"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $created =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   int(1406611742)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $started =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   int(1406611742)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $finished =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   NULL
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $worker =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   string(8) "crodas:1"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $retries =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   int(1)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   class crodas\Worker\Config#21 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     protected $engine =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     class crodas\Worker\Engine\RabbitMQ#22 (4) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       protected $conn =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       class PhpAmqpLib\Connection\AMQPConnection#23 (33) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       protected $channel =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       class PhpAmqpLib\Channel\AMQPChannel#33 (27) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       protected $msg =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       class PhpAmqpLib\Message\AMQPMessage#49 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]               ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     protected $engine_name =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     string(29) "crodas\Worker\Engine\RabbitMQ"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     protected $dirs =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     array(1) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       [0] =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       string(43) "/home/crodas/projects/newest/Worker/example"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     protected $default =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     array(3) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       'host' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       string(9) "localhost"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       'memory_threshold' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       'minimum_tasks' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     private $storage =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       'foo' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       string(3) "bar"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       'worker_id' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]       string(8) "crodas:1"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1] array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   'worker' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   string(8) "crodas:1"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   'args' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1]   string(36) "53d7311e-6f4f-4a5d-87eb-2351184d9eed"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:1] done with success
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2] beging task 'send:email'
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2] class crodas\Worker\Task#47 (10) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $id =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   string(36) "53d7311e-4c1d-4ec3-8eeb-1f4762fcb74b"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $function =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   string(10) "send:email"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $args =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     'to' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     string(22) "1_1406611742@gmail.com"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     'sleep' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     int(180)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $status =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   string(7) "working"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $created =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $started =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $finished =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   NULL
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $worker =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   string(8) "crodas:2"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $retries =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   int(1)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   class crodas\Worker\Config#21 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     protected $engine =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     class crodas\Worker\Engine\RabbitMQ#22 (4) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       protected $conn =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       class PhpAmqpLib\Connection\AMQPConnection#23 (33) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       protected $channel =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       class PhpAmqpLib\Channel\AMQPChannel#33 (27) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       protected $msg =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       class PhpAmqpLib\Message\AMQPMessage#49 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]               ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     protected $engine_name =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     string(29) "crodas\Worker\Engine\RabbitMQ"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     protected $dirs =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     array(1) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       [0] =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       string(43) "/home/crodas/projects/newest/Worker/example"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     protected $default =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     array(3) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       'host' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       string(9) "localhost"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       'memory_threshold' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       'minimum_tasks' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     private $storage =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       'foo' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       string(3) "bar"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       'worker_id' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]       string(8) "crodas:2"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2] array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   'worker' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   string(8) "crodas:2"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   'args' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2]   string(36) "53d7311e-4c1d-4ec3-8eeb-1f4762fcb74b"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:2] done with success
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4] beging task 'send:email'
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4] class crodas\Worker\Task#47 (10) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $id =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   string(36) "53d7311e-8974-4ed6-a650-1858a3b3768d"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $function =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   string(10) "send:email"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $args =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     'to' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     string(22) "4_1406611742@gmail.com"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     'sleep' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     int(450)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $status =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   string(7) "working"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $created =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $started =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $finished =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   NULL
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $worker =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   string(8) "crodas:4"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $retries =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   int(1)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   class crodas\Worker\Config#21 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     protected $engine =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     class crodas\Worker\Engine\RabbitMQ#22 (4) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       protected $conn =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       class PhpAmqpLib\Connection\AMQPConnection#23 (33) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       protected $channel =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       class PhpAmqpLib\Channel\AMQPChannel#33 (27) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       protected $msg =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       class PhpAmqpLib\Message\AMQPMessage#49 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]               ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     protected $engine_name =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     string(29) "crodas\Worker\Engine\RabbitMQ"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     protected $dirs =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     array(1) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       [0] =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       string(43) "/home/crodas/projects/newest/Worker/example"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     protected $default =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     array(3) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       'host' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       string(9) "localhost"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       'memory_threshold' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       'minimum_tasks' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     private $storage =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       'foo' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       string(3) "bar"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       'worker_id' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]       string(8) "crodas:4"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4] array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   'worker' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   string(8) "crodas:4"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   'args' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4]   string(36) "53d7311e-8974-4ed6-a650-1858a3b3768d"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:4] done with success
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6] beging task 'send:email'
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6] class crodas\Worker\Task#47 (10) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $id =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   string(36) "53d7311e-4612-4a47-a5fc-9747d301cb54"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $function =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   string(10) "send:email"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $args =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     'to' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     string(22) "2_1406611742@gmail.com"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     'sleep' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     int(270)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $status =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   string(7) "working"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $created =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $started =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $finished =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   NULL
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $worker =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   string(8) "crodas:6"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $retries =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   int(1)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   class crodas\Worker\Config#21 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     protected $engine =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     class crodas\Worker\Engine\RabbitMQ#22 (4) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       protected $conn =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       class PhpAmqpLib\Connection\AMQPConnection#23 (33) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       protected $channel =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       class PhpAmqpLib\Channel\AMQPChannel#33 (27) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       protected $msg =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       class PhpAmqpLib\Message\AMQPMessage#49 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]               ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     protected $engine_name =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     string(29) "crodas\Worker\Engine\RabbitMQ"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     protected $dirs =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     array(1) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       [0] =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       string(43) "/home/crodas/projects/newest/Worker/example"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     protected $default =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     array(3) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       'host' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       string(9) "localhost"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       'memory_threshold' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       'minimum_tasks' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     private $storage =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       'foo' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       string(3) "bar"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       'worker_id' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]       string(8) "crodas:6"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6] array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   'worker' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   string(8) "crodas:6"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   'args' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6]   string(36) "53d7311e-4612-4a47-a5fc-9747d301cb54"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:6] done with success
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7] beging task 'send:email'
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7] class crodas\Worker\Task#47 (10) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $id =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   string(36) "53d7311e-1f1f-4ba0-aadd-b9b13110e8c2"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $function =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   string(10) "send:email"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $args =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     'to' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     string(22) "3_1406611742@gmail.com"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     'sleep' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     int(360)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $status =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   string(7) "working"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $created =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $started =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   int(1406611743)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $finished =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   NULL
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $worker =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   string(8) "crodas:7"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $retries =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   int(1)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   class crodas\Worker\Config#21 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     protected $engine =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     class crodas\Worker\Engine\RabbitMQ#22 (4) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       protected $conn =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       class PhpAmqpLib\Connection\AMQPConnection#23 (33) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       protected $channel =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       class PhpAmqpLib\Channel\AMQPChannel#33 (27) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       protected $msg =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       class PhpAmqpLib\Message\AMQPMessage#49 (5) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]         ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       protected $config =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]               ...
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     protected $engine_name =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     string(29) "crodas\Worker\Engine\RabbitMQ"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     protected $dirs =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     array(1) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       [0] =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       string(43) "/home/crodas/projects/newest/Worker/example"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     protected $default =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     array(3) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       'host' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       string(9) "localhost"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       'memory_threshold' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       'minimum_tasks' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       int(3)
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     private $storage =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       'foo' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       string(3) "bar"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       'worker_id' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]       string(8) "crodas:7"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]     }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7] array(2) {
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   'worker' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   string(8) "crodas:7"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   'args' =>
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7]   string(36) "53d7311e-1f1f-4ba0-aadd-b9b13110e8c2"
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7] }
+[Tue, 29 Jul 2014 01:29:03 -0400] [crodas:7] done with success
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     0.0002     220232   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     0.0912    1369880   2. crodas\Worker\Server->worker() -:48
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.6772    2387256   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.7151    2387256   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.7151    2387448   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.7151    2387448   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3639    2388256   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3640    2389128   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2389520   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2389656  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2390040  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2390528  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2390576  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2391368  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2391368  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3643    2391464  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     0.0002     220232   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     0.0912    1369880   2. crodas\Worker\Server->worker() -:48
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.6772    2387256   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.7151    2387256   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.7151    2387448   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1]     1.7151    2387448   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3639    2388256   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3640    2389128   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2389520   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2389656  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2390040  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2390528  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2390576  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2391368  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:1] 140758.3642    2391368  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     0.0948    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7211    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7586    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7586    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7587    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3632    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3632    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3634    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3634    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3634    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759896  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     0.0948    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7211    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7586    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7586    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2]     1.7587    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3632    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3632    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3634    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3634    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3634    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:2] 140758.3635    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1018    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1128    2688592   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1130    2688776   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1130    2688968   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1130    2688968   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3586    2689776   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3586    2690648   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2691040   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2691176  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2691560  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2692048  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2692096  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3589    2692888  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3589    2692888  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3589    2692984  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1018    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1128    2688592   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1130    2688776   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1130    2688968   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3]     0.1130    2688968   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3586    2689776   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3586    2690648   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2691040   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2691176  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2691560  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2692048  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3588    2692096  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3589    2692888  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:3] 140758.3589    2692888  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     0.0001     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     0.0993    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7135    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7510    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7510    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7510    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3556    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3557    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3558    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3558    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759896  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     0.0001     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     0.0993    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7135    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7510    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7510    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4]     1.7510    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3556    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3557    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3558    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3558    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:4] 140758.3559    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.0985    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1095    2688592   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1097    2688776   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1097    2688968   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1097    2688968   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3542    2689776   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3542    2690648   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2691040   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2691176  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2691560  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2692048  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2692096  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3545    2692888  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3545    2692888  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3545    2692984  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.0985    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1095    2688592   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1097    2688776   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1097    2688968   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5]     0.1097    2688968   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3542    2689776   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3542    2690648   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2691040   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2691176  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2691560  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2692048  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3544    2692096  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3545    2692888  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:5] 140758.3545    2692888  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     0.0915    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7175    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7554    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7555    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7555    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3598    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3598    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3601    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3601    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3601    2759896  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     0.0915    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7175    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7554    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7555    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6]     1.7555    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3598    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3598    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3600    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3601    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:6] 140758.3601    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     0.0968    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7138    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7529    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7529    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7530    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3577    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3577    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3578    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3578    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759896  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     0.0002     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     0.0968    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7138    2755688   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7529    2755688   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7529    2755880   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7]     1.7530    2755880   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3577    2756688   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3577    2757560   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3578    2757952   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3578    2758088  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2758472  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2758960  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759008  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759800  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:7] 140758.3579    2759800  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] Notice: fwrite(): send of 12 bytes failed with errno=104 Connection reset by peer in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.0001     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.0911    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1020    2688592   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1022    2688776   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1022    2688968   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1022    2688968   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3430    2689776   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3430    2690648   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2691040   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2691176  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2691560  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2692048  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2692096  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3433    2692888  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3433    2692888  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3433    2692984  16. fwrite() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:65
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] Fatal error: Uncaught exception 'PhpAmqpLib\Exception\AMQPRuntimeException' with message 'Broken pipe or closed connection' in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] PhpAmqpLib\Exception\AMQPRuntimeException: Broken pipe or closed connection in /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php on line 69
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] Call Stack:
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.0001     221128   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.0911    1738768   2. crodas\Worker\Server->worker() -:55
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1020    2688592   3. crodas\Worker\Engine\RabbitMQ->listen() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Server.php:254
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1022    2688776   4. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php:97
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1022    2688968   5. PhpAmqpLib\Channel\AbstractChannel->next_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:229
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8]     0.1022    2688968   6. PhpAmqpLib\Connection\AbstractConnection->wait_channel() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:121
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3430    2689776   7. PhpAmqpLib\Channel\AbstractChannel->wait() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:359
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3430    2690648   8. PhpAmqpLib\Channel\AbstractChannel->dispatch() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:261
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2691040   9. call_user_func() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2691176  10. PhpAmqpLib\Connection\AbstractConnection->connection_close() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:105
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2691560  11. PhpAmqpLib\Connection\AbstractConnection->x_close_ok() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:430
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2692048  12. PhpAmqpLib\Channel\AbstractChannel->send_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:441
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3432    2692096  13. PhpAmqpLib\Connection\AbstractConnection->send_channel_method_frame() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php:126
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3433    2692888  14. PhpAmqpLib\Connection\AbstractConnection->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:259
+[Wed, 30 Jul 2014 16:35:00 -0400] [crodas:8] 140758.3433    2692888  15. PhpAmqpLib\Wire\IO\StreamIO->write() /home/crodas/projects/newest/Worker/vendor/videlalvaro/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php:174
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:9
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:10
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:11
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:12
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:13
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:14
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:15
+[Wed, 30 Jul 2014 16:35:00 -0400] [master] Starting process crodas:16
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:9] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:9] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:9]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:9]     0.0211     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:9]     0.1257     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:9]     0.2040     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:10] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:10] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:10]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:10]     0.0230     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:10]     0.1277     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:10]     0.2062     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:11] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:11] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:11]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:11]     0.0203     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:11]     0.1249     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:11]     0.2034     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:12] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:12] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:12]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:12]     0.0279     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:12]     0.1325     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:12]     0.2109     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:13] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:13] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:13]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:13]     0.0192     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:13]     0.1239     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:13]     0.2023     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:14] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:14] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:14]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:14]     0.0211     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:14]     0.1261     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:14]     0.2076     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:15] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:15] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:15]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:15]     0.0113     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:15]     0.1160     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:15]     0.1946     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:16] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:16] Call Stack:
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:16]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:16]     0.0177     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:16]     0.1226     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [crodas:16]     0.2009     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:17
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:18
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:19
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:20
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:21
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:22
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:23
+[Wed, 30 Jul 2014 16:35:01 -0400] [master] Starting process crodas:24
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:17] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:17] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:17]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:17]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:17]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:17]     0.0051     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:18] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:18] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:18]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:18]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:18]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:18]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:19] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:19] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:19]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:19]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:19]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:19]     0.0049     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:20] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:20] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:20]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:20]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:20]     0.0010     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:20]     0.0034     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:21] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:21] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:21]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:21]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:21]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:21]     0.0051     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:22] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:22] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:22]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:22]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:22]     0.0013     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:22]     0.0035     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:23] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:23] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:23]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:23]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:23]     0.0010     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:23]     0.0031     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:24] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:24] Call Stack:
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:24]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:24]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:24]     0.0009     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [crodas:24]     0.0029     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:25
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:26
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:27
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:28
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:29
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:30
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:31
+[Wed, 30 Jul 2014 16:35:02 -0400] [master] Starting process crodas:32
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:25] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:25] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:25]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:25]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:25]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:25]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:26] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:26] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:26]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:26]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:26]     0.0010     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:26]     0.0039     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:27] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:27] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:27]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:27]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:27]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:27]     0.0051     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:28] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:28] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:28]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:28]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:28]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:28]     0.0051     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:29] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:29] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:29]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:29]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:29]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:29]     0.0049     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:30] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:30] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:30]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:30]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:30]     0.0010     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:30]     0.0033     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:31] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:31] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:31]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:31]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:31]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:31]     0.0046     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:32] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:32] Call Stack:
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:32]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:32]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:32]     0.0011     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [crodas:32]     0.0033     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:33
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:34
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:35
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:36
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:37
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:38
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:39
+[Wed, 30 Jul 2014 16:35:03 -0400] [master] Starting process crodas:40
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:33] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:33] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:33]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:33]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:33]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:33]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:34] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:34] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:34]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:34]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:34]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:34]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:35] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:35] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:35]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:35]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:35]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:35]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:36] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:36] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:36]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:36]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:36]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:36]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:37] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:37] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:37]     0.0001     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:37]     0.0002     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:37]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:37]     0.0050     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:38] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:38] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:38]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:38]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:38]     0.0014     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:38]     0.0042     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:39] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:39] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:39]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:39]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:39]     0.0025     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:39]     0.0060     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:40] Fatal error: Call to a member function close() on a non-object in /home/crodas/projects/newest/Worker/lib/crodas/Worker/Engine/Rabbitmq.php on line 66
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:40] Call Stack:
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:40]     0.0002     221256   1. {main}() -:0
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:40]     0.0003     228736   2. require_once('/home/crodas/projects/newest/Worker/example/config.php') -:37
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:40]     0.0015     337224   3. crodas\Worker\Config->setEngine() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [crodas:40]     0.0047     672096   4. crodas\Worker\Engine\RabbitMQ->__destruct() /home/crodas/projects/newest/Worker/example/config.php:6
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] seems dead, respawning
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:41
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:42
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:43
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:44
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:45
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:46
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:47
+[Wed, 30 Jul 2014 16:35:04 -0400] [master] Starting process crodas:48

@@ -36,7 +36,7 @@
 */
 namespace crodas\Worker;
 
-class Persist
+abstract class Persist
 {
     protected $config;
 
@@ -44,5 +44,9 @@ class Persist
     {
         $this->config = $config;
     }
+
+    public function save(Job $job);
+
+    public function find($id);
 
 }

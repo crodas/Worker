@@ -47,7 +47,7 @@ class Config extends ArrayObject
     protected $default = [
         'host' => 'localhost',
         'memory_threshold'  => 3, // allow 3x memory growth before killing it
-        'minimum_tasks'     => 3, // to qualify for memory issue it should have at least 3 tasks
+        'minimum_jobs'     => 3, // to qualify for memory issue it should have at least 3 jobs
     ];
 
     public static function import(Array $definition)

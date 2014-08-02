@@ -37,7 +37,7 @@
 namespace crodas\Worker\Engine;
 
 use crodas\Worker\Config;
-use crodas\Worker\Task;
+use crodas\Worker\Job;
 
 class Gearman extends Engine
 {
@@ -61,10 +61,10 @@ class Gearman extends Engine
         $this->config = $config;
     }
 
-    public function push(Task $task)
+    public function push(Job $job)
     {
         $this->get('GearmanClient')
-            ->doBackground($task->function, $task->serialize());
+            ->doBackground($job->function, $job->serialize());
     }
 
     public function handler($job)
@@ -85,7 +85,7 @@ class Gearman extends Engine
     public function listen()
     { 
         $this->get('GearmanWorker')->work();
-        return Task::restore($this->config, $this->workload);
+        return Job::restore($this->config, $this->workload);
     }
 
 }

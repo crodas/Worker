@@ -36,7 +36,7 @@
 */
 namespace crodas\Worker;
 
-class Task 
+class Job
 {
     protected $id;
 
@@ -54,13 +54,28 @@ class Task
 
     protected $worker;
     
+    protected $result;
+    
     protected $retries =  0;
 
     protected $config;
 
+    protected $synchronous;
+
+    public function getResult()
+    {
+        return $this->result;
+    }
+
     public function __get($name)
     {
         return $this->$name;
+    }
+
+    public function persist()
+    {
+        //$config['persist']->save($this);
+        return $this;
     }
 
     public function begin()
@@ -69,17 +84,22 @@ class Task
         $this->started = time();
         $this->status  = 'working';
         $this->worker  = __WORKER__;
-        var_dump($this);
-        return $this;
+        return $this->persist();
+    }
+
+    public static function find($id)
+    {
     }
 
     public static function restore($config, $string)
     {
         $arr = unserialize($string);
-        $task = new self($config, $arr[1], $arr[2]);
-        $task->id = $arr[0];
+        $job = new self($config, $arr[1], $arr[2]);
+        $job->id            = $arr[0];
+        $job->result        = $arr[3];
+        $job->synchronous   = $arr[4];
 
-        return $task;
+        return $job;
     }
     
     protected function uuid() {
@@ -107,7 +127,19 @@ class Task
 
     public function serialize()
     {
-        return serialize([$this->id, $this->function, $this->args]);
+        return serialize([
+            $this->id, 
+            $this->function, 
+            $this->args, 
+            $this->result, 
+            $this->synchronous
+        ]);
+    }
+
+    public function isSynchronous($sync = true)
+    {
+        $this->synchronous = true;
+        return $this;
     }
 
     public function __construct($config, $name, Array $args = [])
@@ -118,5 +150,12 @@ class Task
         $this->args     = $args;
         $this->created  = time();
     }
+
+    public function setResult($result)
+    {
+        $this->result = $result;
+        return $this;
+    }
+
 
 }

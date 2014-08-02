@@ -42,19 +42,40 @@ class Client
     protected $config;
     protected $engine;
 
+    protected $listening = [
+    ];
+
     public function __construct(Config $config)
     {
         $this->config = $config;
         $this->engine = $config->getEngine();
     }
 
+    public function wait()
+    {
+        $engine = $this->config->GetEngine();
+        $engine->addServices(array_keys($this->listening));
+        while (count($this->listening) > 0 && $job = $engine->listen()) {
+            $result = $job->args;
+            $this->listening[$job->function]->setResult($result[0]);
+            unset($this->listening[$job->function]);
+        }
+    }
+
+    public function pushSync($name, Array $args = array())
+    {
+        $job = new Job($this->config, $name, $args);
+        $job->isSynchronous();
+        $this->engine->push($job);
+        $this->listening[$job->id] = $job;
+        return $job;
+    }
+
     public function push($name, Array $args = array())
     {
-        $task = new Task($this->config, $name, $args);
-
-        $this->engine->push($task);
-
-        return $task;
+        $job = new Job($this->config, $name, $args);
+        $this->engine->push($job);
+        return $job;
     }
 
 }
