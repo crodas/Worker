@@ -7,4 +7,4 @@ CREATE TABLE `tasks` (
 );
 
 CREATE INDEX `IDX_50586597AA29A40A40A9E1CF` on `tasks` (`task_handle`,`task_status`);
-CREATE INDEX `IDX_50586597AA29A40AFF6DC352` on `tasts` (`task_handle`,`task_type`);
+CREATE INDEX `IDX_50586597AA29A40AFF6DC352` on `tasks` (`task_handle`,`task_type`);
