@@ -1,0 +1,8 @@
+table task {
+    String[40]  taskType;
+    Text        taskPayload;
+    int taskStatus = 1;
+    String[20] taskHandle = "";
+
+    KEY taskHandle, taskStatus;
+}

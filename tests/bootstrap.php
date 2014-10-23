@@ -4,19 +4,17 @@ require __DIR__ . "/../vendor/autoload.php";
 
 use Symfony\Component\Process\PhpProcess;
 
+define('XPDO', "sqlite:" . sys_get_temp_dir() . '/worker.db');
+@unlink(sys_get_temp_dir() . "/worker.db");
+
+$dbh = new PDO(XPDO);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dbh->exec(file_get_contents(__DIR__ . '/../lib/crodas/Worker/Engine/PDO/struct.sqlite'));
+
+
 function initServer()
 {
-    $code = "<?php
-    require realpath('" . __DIR__ . "/../vendor/autoload.php');
-    \$config = new crodas\Worker\Config;
-    \$config->setEngine('gearman');
-    \$config->AddDirectory('" . __DIR__ . "');
-
-    \$s = new crodas\Worker\Server(\$config);
-    \$s->serve();
-    ";
-
-    $process = new PhpProcess($code);
+    $process = new PhpProcess(file_get_contents(__DIR__ . '/worker.php'), __DIR__);
     $process->start();
     sleep(5);
 

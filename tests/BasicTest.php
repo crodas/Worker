@@ -4,7 +4,6 @@ use crodas\Worker\Config;
 use crodas\Worker\Server;
 use crodas\Worker\Client;
 
-
 class BasicTest extends \phpunit_framework_testcase
 {
     public function testConfigAndDefaultViews()
@@ -18,9 +17,9 @@ class BasicTest extends \phpunit_framework_testcase
 
     protected function getConfig()
     {
-        $config = new Config;
+        $config = new Config(['pdo' => XPDO]);
         $config->addDirectory(__DIR__)
-            ->setEngine('gearman');
+            ->setEngine('EPDO');
         return $config;
     }
 

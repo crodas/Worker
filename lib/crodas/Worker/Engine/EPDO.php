@@ -34,96 +34,78 @@
   | Authors: César Rodas <crodas@php.net>                                           |
   +---------------------------------------------------------------------------------+
 */
-namespace crodas\Worker;
+namespace crodas\Worker\Engine;
 
-use ArrayObject;
+use crodas\Worker\Engine\PDO\ConnectionManager;
+use crodas\Worker\Engine\PDO\Task;
+use crodas\Worker\Config;
+use crodas\Worker\Job;
+use PDO;
 
-class Config extends ArrayObject
+require __DIR__ . '/PDO/model/autoload.php';
+
+class EPDO extends Engine
 {
-    protected $engine;
-    protected $engine_name;
-    protected $dirs = [];
+    protected $conn;
+    protected $config;
+    protected $handle;
+    protected $args;
+    protected $sql;
+    protected $services = array();
 
-    protected $default = [
-        'host' => '127.0.0.1',
-        'memory_threshold'  => 3, // allow 3x memory growth before killing it
-        'minimum_jobs'     => 3, // to qualify for memory issue it should have at least 3 jobs
-    ];
-
-    public static function import(Array $definition)
+    public function setConfig(Config $config)
     {
-        $object = new self;
-        foreach ($definition['all'] as $key => $value) {
-            $object[$key] = $value;
+        $pdo = new PDO($config['pdo']);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $this->conn = new ConnectionManager($pdo);
+        $this->config = $config;
+        $this->handle = uniqid(true);
+    }
+
+    public function push(Job $job)
+    {
+        $task = new Task;
+        $task->taskType = $job->function;
+        $task->taskPayload = $job->serialize();
+        $this->conn->save($task);
+    }
+
+    public function addServices(Array $services)
+    {
+        $this->services = array_merge($this->services, $services);
+        $types = implode(",", array_fill(0, count($this->services), "?"));
+        $this->sql = $this->conn->prepare(NULL, "UPDATE tasks SET task_handle=?, task_status=1 
+            WHERE task_id IN (
+                SELECT task_id 
+                FROM tasks 
+                WHERE 
+                    task_handle='' AND task_type IN ($types)
+                LIMIT 1
+            )");
+
+
+        $this->args = array_merge([$this->handle], $this->services);
+    }
+
+    public function listen()
+    {
+        if (empty($this->sql)) {
+            throw new \RuntimeException("You need to add services first");
         }
-        $object->dirs = $definition['dirs'];
-        $object->setEngine($definition['engine_name']);
-
-        return $object;
-    }
-
-    public function export()
-    {
-        return var_export(array(
-            'dirs' => $this->dirs,
-            'engine_name' => $this->engine_name,
-            'all' => (array)$this,
-        ), true);
-    }
-
-    public function offsetExists($index)
-    {
-        return true;
-    }
-
-    public function offsetGet($index)
-    {
-        if (!parent::offsetExists($index)) {
-            if (!empty($this->default[$index])) {
-                return $this->default[$index];
+        $tasks = $this->conn->tasks;
+        do {
+            $this->sql->execute($this->args);
+            $task = $tasks->findOneByTaskHandleAndTaskStatus($this->handle, 1);
+            if ($task) {
+                $task->taskStatus = 2;
+                $this->conn->save($task);
+                break;
             }
-            return false;
-        }
-
-        return parent::offsetGet($index);
+            usleep(200000);
+        } while (true);
+        return Job::restore($this->config, $task->taskPayload);
     }
 
-    public function getEngine()
-    {
-        return $this->engine;
-    }
-
-    public function addDirectory($dir)
-    {
-        $this->dirs[] = $dir;
-        return $this;
-    }
-
-    public function getDirectories()
-    {
-        return $this->dirs;
-    }
-
-    public function setEngine($engine)
-    {
-        if (is_string($engine)) {
-            if (class_exists($engine))  {
-                $class = $engine;
-            } else {
-                $class = 'crodas\Worker\Engine\\' . ucfirst($engine);
-            }
-            if (!class_exists($class)) {
-                throw new \RuntimeException("Cannot find class $class");
-            }
-            $engine = new $class;
-        }
-
-        $this->engine_name = get_class($engine);
-
-        $engine->setConfig($this);
-
-        $this->engine = $engine;
-
-        return $this;
-    }
 }
+

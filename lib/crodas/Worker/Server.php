@@ -73,7 +73,6 @@ class Server
         \$server->worker();
         ";
 
-
         $this->log(null, "Starting process $id");
         $process = new PhpProcess($boostrap);
         $process->start();
