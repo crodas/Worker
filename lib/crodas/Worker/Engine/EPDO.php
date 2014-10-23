@@ -55,7 +55,7 @@ class EPDO extends Engine
 
     public function setConfig(Config $config)
     {
-        $pdo = new PDO($config['pdo']);
+        $pdo = new PDO($config['pdo'], $config['user'] ?: '', $config['password'] ?: '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $this->conn = new ConnectionManager($pdo);
