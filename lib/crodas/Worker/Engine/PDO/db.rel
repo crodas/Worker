@@ -5,4 +5,5 @@ table task {
     String[20] taskHandle = "";
 
     KEY taskHandle, taskStatus;
+    KEY taskHandle, taskType;
 }

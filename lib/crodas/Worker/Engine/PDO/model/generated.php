@@ -293,18 +293,55 @@ abstract class TaskTableAbstract implements \ArrayAccess
             [$task_handle, $task_status]
         );
     }
+    public function findOneByTaskHandleAndTaskType($task_handle, $task_type)
+    {
+        return $this->manager->queryOne(
+            $this,
+            "
+            SELECT 
+                tasks.*
+            FROM tasks 
+                
+            WHERE 
+                tasks.task_handle = ? AND tasks.task_type = ?
+            LIMIT 1
+            ",
+            [$task_handle, $task_type]
+        );
+    }
+
+    public function findByTaskHandleAndTaskType($task_handle, $task_type, $offset = 0, $limit = 20)
+    {
+        $offset = (int)$offset;
+        $limit = (int)$limit;
+
+
+        return $this->manager->query(
+            $this,
+            "
+            SELECT 
+                tasks.*
+            FROM tasks 
+                
+            WHERE 
+                tasks.task_handle = ? AND tasks.task_type = ?
+            LIMIT $offset, $limit
+            ",
+            [$task_handle, $task_type]
+        );
+    }
 
 
     public function populate(Task $object, Array $data, $fromDb = false)
     {
-        $object->setOriginalData1544907e1a3ff7($this->manager, $data, $fromDb);
+        $object->setOriginalData15449084632d5d($this->manager, $data, $fromDb);
         return $object;
     }
 
     public function map(Array $row, $fromDb = true)
     {
         $object = new Task;
-        $object->setOriginalData1544907e1a3ff7($this->manager, $row, $fromDb);
+        $object->setOriginalData15449084632d5d($this->manager, $row, $fromDb);
         return $object;
     }
 
@@ -355,8 +392,8 @@ abstract class TaskTableAbstract implements \ArrayAccess
 }
 trait TaskEntity
 {
-    private $originalData1544907e1a3ff7 = array();
-    private $manager1544907e1a3ff7;
+    private $originalData15449084632d5d = array();
+    private $manager15449084632d5d;
 
     public $taskId = NULL;
 
@@ -369,10 +406,10 @@ trait TaskEntity
     public $taskHandle = '';
 
 
-    public function setOriginalData1544907e1a3ff7(ConnectionManager $manager, Array $row, $fromDb = true)
+    public function setOriginalData15449084632d5d(ConnectionManager $manager, Array $row, $fromDb = true)
     {
         $data = array();
-        $this->manager1544907e1a3ff7 = $manager;
+        $this->manager15449084632d5d = $manager;
         if (array_key_exists('task_id', $row)) {
             $data['taskId'] = $row['task_id'];
             $this->taskId = $row['task_id'];
@@ -415,16 +452,16 @@ trait TaskEntity
         }
 
         if ($fromDb) {
-            $this->originalData1544907e1a3ff7 = array_merge(
-                $this->originalData1544907e1a3ff7,
+            $this->originalData15449084632d5d = array_merge(
+                $this->originalData15449084632d5d,
                 $data
             );
         }
     }
 
-    public function getOriginalData1544907e1a3ff7()
+    public function getOriginalData15449084632d5d()
     {
-        return $this->originalData1544907e1a3ff7;
+        return $this->originalData15449084632d5d;
     }
 
 

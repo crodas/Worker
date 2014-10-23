@@ -55,6 +55,7 @@ function createTableTasks($schema)
     }
     $table->setPrimaryKey([0=>'task_id']);
     $table->addIndex([0=>'task_handle',1=>'task_status']);
+    $table->addIndex([0=>'task_handle',1=>'task_type']);
 }
 
 $config = new Configuration();

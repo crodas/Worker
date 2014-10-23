@@ -31,7 +31,7 @@ if (!function_exists('openssl_random_pseudo_bytes')) {
 /**
  *  Pseudo-UUID, it uses time and microtime() as the first 6 bytes
  */
-function UUID1544907e1a3ff7()
+function UUID15449084632d5d()
 {
     $bytes = str_split(bin2hex(openssl_random_pseudo_bytes(10)), 4);
     $bytes[0][0] = '4';
@@ -280,7 +280,7 @@ class ConnectionManager
 
     public function save($object)
     {
-        $original = $object->getOriginalData1544907e1a3ff7();
+        $original = $object->getOriginalData15449084632d5d();
         $mapper   = $this->getTable(get_class($object));
         $array    = $mapper->getArray($object, $this, $original);
 
@@ -301,7 +301,7 @@ class ConnectionManager
 
         $this->commit();
 
-        $object->setOriginalData1544907e1a3ff7($this, $array);
+        $object->setOriginalData15449084632d5d($this, $array);
 
         return $this;
     }
