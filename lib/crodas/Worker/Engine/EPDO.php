@@ -75,14 +75,19 @@ class EPDO extends Engine
     {
         $this->services = array_merge($this->services, $services);
         $types = implode(",", array_fill(0, count($this->services), "?"));
-        $this->sql = $this->conn->prepare(NULL, "UPDATE tasks SET task_handle=?, task_status=1 
-            WHERE task_id IN (
-                SELECT task_id 
-                FROM tasks 
-                WHERE 
-                    task_handle='' AND task_type IN ($types)
-                LIMIT 1
-            )");
+        if (preg_match('/^mysql:/', $this->config['pdo'])) {
+            $this->sql = $this->conn->prepare(NULL, "UPDATE tasks SET task_handle=?, task_status=1 
+                WHERE task_handle='' AND task_type IN ($types) LIMIT 1");
+        } else {
+            $this->sql = $this->conn->prepare(NULL, "UPDATE tasks SET task_handle=?, task_status=1 
+                WHERE task_id IN (
+                    SELECT task_id 
+                    FROM tasks 
+                    WHERE 
+                        task_handle='' AND task_type IN ($types)
+                 LIMIT 1
+                )");
+        }
 
 
         $this->args = array_merge([$this->handle], $this->services);
