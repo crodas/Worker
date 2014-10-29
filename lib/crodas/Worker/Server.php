@@ -187,6 +187,11 @@ class Server
                     $this->processReport($process, $output);
                     $processes[$i]->clearOutput();
                 }
+                $output = $process->getErrorOutput();
+                if(!empty($output)) {
+                    $this->processReport($process, $output);
+                    $processes[$i]->clearErrorOutput();
+                }
 
                 $timeout = false;
                 if ($process->status == 'busy' && $process->time+$process->timeout < time()) {
